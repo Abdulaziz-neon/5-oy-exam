@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asaxiy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2Pkf6z7f3GJ4Z1rj7CM1c8Z2rZ1qfV8gJZ9i3t+Kk9JrN6xM1V7QZ4h8eg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body class="p-2">
+    <nav class="flex justify-between items-center p-4 bg-white md:hidden">
+      <div class="text-lg font-bold">
+        <a href="./index.html"><img src="./img/Logo.png" alt="" /></a>
+      </div>
+      <button id="menu-btn" class="text-2xl focus:outline-none">☰</button>
+    </nav>
+    <div id="menu" class="hidden flex-col gap-4 p-4 bg-white md:hidden">
+      <div class="flex items-center space-x-3">
+        <img src="./img/oplatit.png" />
+        <p class="font-bold opacity-[60%]">Оплатить</p>
+      </div>
+      <div class="flex items-center space-x-3">
+        <img src="./img/otsledit.png" />
+        <p class="font-bold opacity-[60%]">Отследить заказ</p>
+      </div>
+      <div class="flex items-center space-x-3">
+        <div class="w-[10%]">
+          <img
+            src="https://asaxiy.uz/custom-assets/images/icons/header/icons8-new-product.svg"
+          />
+        </div>
+        <p class="font-bold opacity-[60%]">Новинки</p>
+      </div>
+      <div class="flex items-center space-x-3">
+        <img src="https://asaxiy.uz/custom-assets/images/icons/news.svg" />
+        <p class="font-bold opacity-[60%]">Новости</p>
+      </div>
+      <div class="flex items-center space-x-3">
+        <img
+          src="https://asaxiy.uz/custom-assets/images/icons/info-black.svg"
+        />
+        <p class="font-bold opacity-[60%]">О нас</p>
+      </div>
+      <h3 class="font-bold text-xl">Доставка и магазины</h3>
+    </div>
+
+    <nav class="hidden md:flex justify-between p-4 items-center">
+      <div class="flex items-center space-x-3">
+        <img src="./img/logo.png" alt="" />
+        <div
+          class="bg-[#006BFF] rounded-xl py-2 text-white px-3 font-bold text-[16px]"
+        >
+          ☰Категории
+        </div>
+        <form action="./index.html" class="flex w-full max-w-md items-center">
+          <input
+            name="q"
+            type="text"
+            placeholder="Поиск..."
+            class="flex-grow max-w-[400px] rounded border border-[#006BFF] px-4 py-2 text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            class="rounded bg-[#006BFF] px-4 py-2 text-white text-[16px] hover:bg-blue-700 transition-colors"
+            type="submit"
+          >
+            Искать
+          </button>
+        </form>
+      </div>
+      <div class="flex space-x-12">
+        <div class="flex flex-col items-center space-y-1">
+          <div>
+            <img src="./img/srav.png" />
+          </div>
+          <p class="text-[12px]">Сравнение</p>
+        </div>
+        <div class="flex flex-col items-center space-y-1">
+          <div>
+            <img src="./img/oplatit.png" />
+          </div>
+          <p class="text-[12px]">Оплатить</p>
+        </div>
+        <div class="flex flex-col items-center space-y-1">
+          <div>
+            <img src="./img/otsledit.png" />
+          </div>
+          <p class="text-[12px]">Отследить</p>
+        </div>
+        <div class="flex flex-col items-center space-y-1">
+          <div>
+            <img src="./img/korzina.png" />
+          </div>
+          <p class="text-[12px]">Корзина</p>
+        </div>
+        <div class="flex flex-col items-center space-y-1">
+          <div>
+            <img src="./img/izbran.png" />
+          </div>
+          <p class="text-[12px]">Избранное</p>
+        </div>
+        <div class="flex flex-col items-center space-y-1">
+          <div>
+            <img src="./img/uzb.png" />
+          </div>
+          <p class="text-[12px]">O'zbekcha</p>
+        </div>
+        <div class="flex flex-col items-center space-y-1">
+          <div>
+            <img src="./img/voyti.png" />
+          </div>
+          <p class="text-[12px]">Войти</p>
+        </div>
+      </div>
+    </nav>
+    <hr />
+
+    <nav class="hidden md:flex justify-between p-4 items-center">
+      <a href="./index.html">Супер цена</a>
+      <a href="./index.html">0-0-6</a>
+      <a href="./index.html">Смартфоны</a>
+      <a href="./index.html">Бытовая техника</a>
+      <a href="./index.html">Книги</a>
+      <a href="./index.html">Телевизоры</a>
+      <a href="./index.html">Ноутбуки</a>
+    </nav>
+
+
+    <section class="container mx-auto px-4 mt-6">
+      <h2 class="text-lg font-semibold mb-4">Корзина</h2>
+      <div id="cartEmpty" class="hidden flex-col items-center justify-center py-16 text-center">
+        <i class="fa-solid fa-cart-shopping text-4xl text-gray-400"></i>
+        <p class="mt-3 text-gray-600">Ваша корзина пуста</p>
+        <a href="./index.html" class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded">Продолжить покупки <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div id="cartWrap" class="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
+        <div>
+          <div id="cartList" class="divide-y bg-white border rounded">
+
+          </div>
+        </div>
+        <aside class="bg-white border rounded p-4 h-fit">
+          <h3 class="font-semibold mb-3">Итого</h3>
+          <div class="flex items-center justify-between text-sm mb-2">
+            <span>Товары</span>
+            <span id="sumSubtotal">$1</span>
+          </div>
+          <div class="flex items-center justify-between text-base font-semibold">
+            <span>К оплате</span>
+            <span id="sumTotal">$1</span>
+          </div>
+          <button id="checkoutBtn" class="mt-4 w-full bg-blue-600 text-white rounded py-2">Оформить заказ</button>
+        </aside>
+      </div>
+    </section>
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
+      });
+
+      const CART_KEY = 'cartItems';
+      const cartList = document.getElementById('cartList');
+      const cartWrap = document.getElementById('cartWrap');
+      const cartEmpty = document.getElementById('cartEmpty');
+      const sumSubtotal = document.getElementById('sumSubtotal');
+      const sumTotal = document.getElementById('sumTotal');
+
+      function currency(v){
+        try{ return new Intl.NumberFormat('ru-RU', { style:'currency', currency:'USD', maximumFractionDigits:0 }).format(v); }catch{ return `$${v}`; }
+      }
+      function getCart(){
+        try { return JSON.parse(localStorage.getItem(CART_KEY) || '[]'); } catch { return []; }
+      }
+      function setCart(list){ localStorage.setItem(CART_KEY, JSON.stringify(list)); }
+
+      function updateTotals(list){
+        const subtotal = list.reduce((s, i) => s + (i.product?.price || 0) * i.qty, 0);
+        sumSubtotal.textContent = currency(subtotal);
+        sumTotal.textContent = currency(subtotal);
+      }
+
+      function render(){
+        const items = getCart();
+        cartList.innerHTML = '';
+        if(!items.length){
+          cartWrap.classList.add('hidden');
+          cartEmpty.classList.remove('hidden');
+          updateTotals([]);
+          return;
+        }
+        cartWrap.classList.remove('hidden');
+        cartEmpty.classList.add('hidden');
+
+        items.forEach(({ id, qty, product }) => {
+          const row = document.createElement('div');
+          row.className = 'p-4 flex items-center gap-4';
+          row.innerHTML = `
+            <div class="w-20 h-20 bg-gray-50 rounded overflow-hidden flex-shrink-0"><img src="${product.image}" class="w-full h-full object-contain"/></div>
+            <div class="flex-1 min-w-0">
+              <h4 class="font-medium truncate">${product.name}</h4>
+              <p class="text-xs text-gray-500 line-clamp-2">${product.description || ''}</p>
+              <div class="mt-2 text-blue-600 font-semibold">${currency(product.price)}</div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button data-id="${id}" class="qty-dec w-8 h-8 rounded border">-</button>
+              <span class="w-8 text-center">${qty}</span>
+              <button data-id="${id}" class="qty-inc w-8 h-8 rounded border">+</button>
+            </div>
+            <div class="w-24 text-right font-semibold">${currency(product.price * qty)}</div>
+            <button title="Удалить" data-id="${id}" class="remove text-red-500 hover:text-red-700 text-sm font-medium">remove x</button>
+          `;
+          cartList.appendChild(row);
+        });
+
+        cartList.querySelectorAll('.qty-inc').forEach(btn => btn.addEventListener('click', () => changeQty(Number(btn.getAttribute('data-id')), +1)));
+        cartList.querySelectorAll('.qty-dec').forEach(btn => btn.addEventListener('click', () => changeQty(Number(btn.getAttribute('data-id')), -1)));
+        cartList.querySelectorAll('.remove').forEach(btn => btn.addEventListener('click', () => removeItem(Number(btn.getAttribute('data-id')))));
+
+        updateTotals(getCart());
+      }
+
+      function changeQty(id, delta){
+        const list = getCart();
+        const idx = list.findIndex(i => i.id === id);
+        if(idx < 0) return;
+        list[idx].qty = Math.max(1, (list[idx].qty || 1) + delta);
+        setCart(list);
+        render();
+      }
+      function removeItem(id){
+        const list = getCart().filter(i => i.id !== id);
+        setCart(list);
+        render();
+      }
+
+      render();
+    </script>
+  </body>
+</html>

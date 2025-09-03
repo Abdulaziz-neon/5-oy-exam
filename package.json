@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^4.1.12"
+  },
+  "name": "12-dars-exam",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdulaziz-neon/5-oy-exam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abdulaziz-neon/5-oy-exam/issues"
+  },
+  "homepage": "https://github.com/Abdulaziz-neon/5-oy-exam#readme",
+  "description": ""
+}

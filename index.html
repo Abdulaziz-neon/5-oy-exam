@@ -1,11 +1,429 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>Asaxiy clone imtihon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2Pkf6z7f3GJ4Z1rj7CM1c8Z2rZ1qfV8gJZ9i3t+Kk9JrN6xM1V7QZ4h8eg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+
 <body>
-    
+    <nav class="flex items-center justify-between bg-white p-4 shadow-md">
+
+        <div class="flex items-center space-x-4">
+            <a href="./index.html"><img class="cursor-pointer" src="./img/asaxiy logo.svg" alt=""></a>
+            <button class="bg-blue-500 text-white px-4 py-1 rounded text-sm">Категории</button>
+        </div>
+
+
+        <div class="flex-1 mx-4 max-w-xl">
+            <form id="searchForm" class="flex">
+                <input id="searchInput" type="text" placeholder="Поиск..."
+                    class="w-full border border-gray-300 rounded-l px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                <button class="bg-blue-500 text-white px-4 py-1 rounded-r text-sm" type="submit">Искать</button>
+            </form>
+        </div>
+
+
+        <div class="flex items-center space-x-6 text-xs text-gray-700">
+            <div class="flex flex-col items-center">
+                <img src="./img/Сравнение.png" alt="Сравнение">
+                <span>Сравнение</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="./img/Оплатить.svg" class="h-5 mb-1" alt="Оплатить" />
+                <span>Оплатить</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="/img/Отследить заказ.svg" class="h-5 mb-1" alt="Отследить" />
+                <span>Отследить</span>
+            </div>
+            <div class="flex flex-col items-center relative">
+                <a href="./savat.html" class="relative inline-block">
+                    <img src="./img/korzina.png" class="h-5 mb-1" alt="Корзина" />
+                    <span id="cartCount" class="hidden absolute -top-2 -right-2 text-[10px] leading-none bg-red-600 text-white rounded-full px-1.5 py-0.5">0</span>
+                </a>
+                <span>Корзина</span>
+            </div>
+            <div class="flex flex-col items-center relative">
+                <a href="./liked.html" class="relative inline-block">
+                    <img src="/img/lv.svg" class="h-5 mb-1" alt="Избранное" />
+                    <span id="likeCount" class="hidden absolute -top-2 -right-2 text-[10px] leading-none bg-red-600 text-white rounded-full px-1.5 py-0.5">0</span>
+                </a>
+                <span>Избранное</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="/img/av.svg" class="h-5 mb-1" alt="Войти" />
+                <span>Войти</span>
+            </div>
+        </div>
+
+    </nav>
+    <div class="bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <ul class="flex justify-center space-x-8 text-sm text-gray-800 py-3 font-medium">
+                <li><a href="./index.html" class="hover:text-blue-600 transition">Глава</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition">0-0-6</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition">Лучшее для студентов</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition">Смартфоны</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition">Бытовая техника</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition">Книги</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition">Телевизоры</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition">Ноутбуки</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <section class="container mx-auto px-4 mt-6">
+        <div class="flex items-center justify-between mb-3">
+            <h2 class="text-lg font-semibold">Супер цены</h2>
+            <div class="space-x-2">
+                <button id="carouselPrev" class="w-9 h-9 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-chevron-left"></i></button>
+                <button id="carouselNext" class="w-9 h-9 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+        <div id="carousel" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2" style="scrollbar-width: none;">
+
+        </div>
+    </section>
+
+
+    <section class="container mx-auto px-4 mt-10">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-semibold">Телефоны и гаджеты</h2>
+            <a href="#" class="text-blue-600 text-sm">Все товары</a>
+        </div>
+        <div id="productsGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+
+        </div>
+    </section>
+
+
+    <footer class="mt-16 bg-white border-t">
+        <div class="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <a href="./index.html" class="inline-block mb-3"><img class="h-6" src="./img/asaxiy logo.svg" alt="logo"></a>
+                <p class="text-sm text-gray-600 leading-6">Интернет-магазин техники, электроники и товаров для дома. Удобная рассрочка 0-0-6.</p>
+                <div class="flex items-center gap-3 mt-4 text-gray-600">
+                    <a class="w-9 h-9 flex items-center justify-center rounded-full border hover:text-blue-600 hover:border-blue-600" href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a class="w-9 h-9 flex items-center justify-center rounded-full border hover:text-blue-600 hover:border-blue-600" href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="w-9 h-9 flex items-center justify-center rounded-full border hover:text-blue-600 hover:border-blue-600" href="#" aria-label="telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a class="w-9 h-9 flex items-center justify-center rounded-full border hover:text-blue-600 hover:border-blue-600" href="#" aria-label="youtube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-3">О магазине</h3>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li><a href="#" class="hover:text-blue-600">О компании</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Контакты</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Вакансии</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-3">Покупателям</h3>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li><a href="#" class="hover:text-blue-600">Как оформить заказ</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Оплата и доставка</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Возврат товара</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-3">Служба поддержки</h3>
+                <p class="text-sm text-gray-600">Ежедневно 9:00–21:00</p>
+                <a href="tel:+998712009099" class="text-lg font-semibold mt-1 inline-block">+998 71 200 90 99</a>
+                <div class="mt-4">
+                    <h4 class="text-sm font-medium mb-2">Мы принимаем</h4>
+                    <div class="flex items-center gap-3 text-2xl text-gray-700">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-solid fa-credit-card"></i>
+                        <i class="fa-brands fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t">
+            <div class="container mx-auto px-4 py-4 text-xs text-gray-600 flex flex-col sm:flex-row items-center justify-between gap-2">
+                <p>© 2025 Asaxiy Demo. Все права защищены.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="hover:text-blue-600">Политика конфиденциальности</a>
+                    <a href="#" class="hover:text-blue-600">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const API_URL = 'https://dummyjson.com/products?limit=30';
+
+    const carouselEl = document.getElementById('carousel');
+    const productsGridEl = document.getElementById('productsGrid');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+
+    const LS_KEYS = {
+        LIKES: 'likedProducts',
+        CART: 'cartItems'
+    };
+    const getLikes = () => JSON.parse(localStorage.getItem(LS_KEYS.LIKES) || '[]');
+    const setLikes = (list) => localStorage.setItem(LS_KEYS.LIKES, JSON.stringify(list));
+    const isLiked = (id) => getLikes().some(p => p.id === id);
+    const toggleLike = (product) => {
+        const current = getLikes();
+        const index = current.findIndex(p => p.id === product.id);
+        if (index >= 0) {
+            current.splice(index, 1);
+        } else {
+            current.push(product);
+        }
+        setLikes(current);
+        return index < 0; 
+    };
+
+    const getCart = () => JSON.parse(localStorage.getItem(LS_KEYS.CART) || '[]');
+    const setCart = (list) => localStorage.setItem(LS_KEYS.CART, JSON.stringify(list));
+    const upsertCart = (product, qty) => {
+        const list = getCart();
+        const idx = list.findIndex(i => i.id === product.id);
+        if (idx >= 0) {
+            list[idx].qty = Math.max(1, qty);
+            list[idx].product = product;
+        } else {
+            list.push({ id: product.id, qty: Math.max(1, qty), product });
+        }
+        setCart(list);
+        updateBadges();
+    };
+
+    function formatPrice(usd) {
+        try {
+            return new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(usd);
+        } catch (e) {
+            return usd + ' $';
+        }
+    }
+
+    function createCard(product, compact = false) {
+        const { name, price, image, description, discountPercentage, rating } = product;
+        const base = document.createElement('div');
+        base.className = compact
+            ? 'min-w-[220px] max-w-[220px] snap-start bg-white border rounded-2xl p-3 hover:shadow-md transition'
+            : 'bg-white border rounded-2xl p-4 flex flex-col hover:shadow-md transition';
+
+        const hasDiscount = typeof discountPercentage === 'number' && discountPercentage > 0;
+        const oldPrice = hasDiscount ? price : null;
+        const newPrice = hasDiscount ? Math.round(price * (1 - discountPercentage / 100)) : price;
+
+        const ratingStars = (() => {
+            const val = Math.max(0, Math.min(5, Math.round((rating || 0))));
+            let s = '';
+            for (let i = 0; i < 5; i++) {
+                s += `<i class=\"fa-star ${i < val ? 'fa-solid text-[#FFA800]' : 'fa-regular text-gray-300'} text-[12px]\"></i>`;
+            }
+            return s;
+        })();
+
+        const emi = `<div class=\"mt-2 inline-flex items-center text-[12px] text-[#FF7A00] border border-[#FFB36A] bg-[#FFF4E8] rounded-lg px-3 py-1\">${formatPrice(Math.round(newPrice / 12))} x 12 мес</div>`;
+
+        base.innerHTML = `
+            <div class="relative w-full aspect-square bg-gray-50 rounded-xl overflow-hidden">
+                <img src="${image}" alt="${name}" class="w-full h-full object-contain"/>
+                <button aria-label="like" class="like-btn absolute top-2 right-2 w-6 h-6 flex items-center justify-center">
+                    <img class="like-icon w-5 h-5" src="./img/lv.svg" alt="like" />
+                </button>
+                ${hasDiscount ? '<span class="absolute left-2 top-2 bg-orange-400 text-white text-[10px] px-2 py-1 rounded">СКИДКА</span>' : ''}
+            </div>
+            <h3 class="mt-3 text-[14px] font-medium leading-5 line-clamp-2">${name}</h3>
+            <div class="mt-2 flex items-center justify-between">
+                <div class="flex gap-1">${ratingStars}</div>
+                <span class="text-[11px] text-gray-400">${(product.reviewsCount || 0)} отзывов</span>
+            </div>
+            ${hasDiscount ? `<div class=\"text-[12px] text-gray-400 mt-1 line-through\">${formatPrice(oldPrice)}</div>` : ''}
+            <div class="mt-1 text-[18px] text-[#1366E2] font-bold">${formatPrice(newPrice)}</div>
+            ${emi}
+            <div class="mt-3 flex items-center gap-2">
+                <button class="flex-1 bg-[#1366E2] hover:bg-blue-700 text-white text-[12px] font-semibold px-3 py-2 rounded-lg">Купить в один клик</button>
+                <button title="В корзину" class="add-cart-btn w-10 h-10 flex items-center justify-center rounded-lg bg-[#1CC98E] text-white hover:brightness-95">
+                    <img src="./img/producticon.svg" class="w-5 h-5" alt="cart" />
+                </button>
+            </div>
+        `;
+        const likeBtn = base.querySelector('.like-btn');
+        const likeIcon = likeBtn.querySelector('.like-icon');
+        if (isLiked(product.id)) {
+            likeIcon.style.filter = 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)';
+        }
+        likeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const nowLiked = toggleLike(product);
+            if (nowLiked) {
+                likeIcon.style.filter = 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)';
+            } else {
+                likeIcon.style.filter = 'none';
+            }
+            updateBadges();
+        });
+
+        const addBtn = base.querySelector('.add-cart-btn');
+        const withPricing = { ...product, price: newPrice };
+        addBtn.addEventListener('click', () => openCartModal(withPricing));
+        return base;
+    }
+
+    async function loadProducts() {
+        try {
+            const res = await fetch(API_URL);
+            const json = await res.json();
+            const raw = Array.isArray(json) ? json : (json.products || []);
+
+            const data = raw.map(item => ({
+                id: item.id,
+                name: item.title,
+                price: item.price,
+                image: item.thumbnail || (item.images && item.images[0]) || 'https://via.placeholder.com/200x200?text=No+Image',
+                description: item.description,
+                discountPercentage: item.discountPercentage
+            }));
+
+            const params = new URLSearchParams(location.search);
+            const q = (params.get('q') || '').trim().toLowerCase();
+
+            const si = document.getElementById('searchInput');
+            if (si && q) si.value = q;
+
+            const filtered = q ? data.filter(p => p.name.toLowerCase().includes(q) || (p.description||'').toLowerCase().includes(q)) : data;
+            const carouselItems = filtered.slice(0, 10);
+            carouselItems.forEach(p => carouselEl.appendChild(createCard(p, true)));
+
+            filtered.forEach(p => productsGridEl.appendChild(createCard(p)));
+        } catch (err) {
+            console.error('Failed to load products', err);
+            const fallback = document.createElement('p');
+            fallback.className = 'text-red-600';
+            fallback.textContent = 'Не удалось загрузить товары. Попробуйте позже.';
+            productsGridEl?.appendChild(fallback);
+        }
+    }
+
+    function updateBadges() {
+        const likeCountEl = document.getElementById('likeCount');
+        const cartCountEl = document.getElementById('cartCount');
+        const likeLen = getLikes().length;
+        const cartLen = getCart().reduce((s,i)=>s + (i.qty||1), 0);
+        if (likeCountEl) {
+            likeCountEl.textContent = String(likeLen);
+            likeLen ? likeCountEl.classList.remove('hidden') : likeCountEl.classList.add('hidden');
+        }
+        if (cartCountEl) {
+            cartCountEl.textContent = String(cartLen);
+            cartLen ? cartCountEl.classList.remove('hidden') : cartCountEl.classList.add('hidden');
+        }
+    }
+
+    function scrollByAmount(amount) {
+        carouselEl?.scrollBy({ left: amount, behavior: 'smooth' });
+    }
+    prevBtn?.addEventListener('click', () => scrollByAmount(-300));
+    nextBtn?.addEventListener('click', () => scrollByAmount(300));
+
+    const modal = document.createElement('div');
+    modal.id = 'cartModal';
+    modal.className = 'fixed inset-0 z-50 hidden';
+    modal.innerHTML = `
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="absolute inset-0 flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-lg shadow-lg">
+          <div class="flex items-center justify-between p-4 border-b">
+            <h3 class="font-semibold">Добавить в корзину</h3>
+            <button id="cartClose" class="text-gray-500 hover:text-gray-700"><i class="fa-solid fa-xmark text-xl"></i></button>
+          </div>
+          <div class="p-4 flex gap-4 items-start">
+            <div class="w-28 h-28 bg-gray-50 rounded overflow-hidden flex-shrink-0"><img id="cartImg" class="w-full h-full object-contain"/></div>
+            <div class="flex-1">
+              <h4 id="cartName" class="font-medium"></h4>
+              <p id="cartDesc" class="text-sm text-gray-500 mt-1 line-clamp-3"></p>
+              <div class="mt-3 flex items-center gap-3">
+                <button id="qtyMinus" class="w-8 h-8 rounded border text-lg">-</button>
+                <span id="qtyValue" class="w-10 text-center">1</span>
+                <button id="qtyPlus" class="w-8 h-8 rounded border text-lg">+</button>
+              </div>
+              <div class="mt-3 text-blue-600 font-semibold">Итого: <span id="cartTotal"></span></div>
+            </div>
+          </div>
+          <div class="p-4 border-t flex items-center justify-end gap-2">
+            <button id="cartCancel" class="px-4 py-2 rounded border">Отмена</button>
+            <button id="cartConfirm" class="px-4 py-2 rounded bg-blue-600 text-white">Добавить</button>
+          </div>
+        </div>
+      </div>`;
+    document.body.appendChild(modal);
+
+    let modalProduct = null;
+    let modalQty = 1;
+    const refs = {
+        wrap: modal,
+        close: modal.querySelector('#cartClose'),
+        cancel: modal.querySelector('#cartCancel'),
+        confirm: modal.querySelector('#cartConfirm'),
+        img: modal.querySelector('#cartImg'),
+        name: modal.querySelector('#cartName'),
+        desc: modal.querySelector('#cartDesc'),
+        total: modal.querySelector('#cartTotal'),
+        qtyMinus: modal.querySelector('#qtyMinus'),
+        qtyPlus: modal.querySelector('#qtyPlus'),
+        qtyValue: modal.querySelector('#qtyValue')
+    };
+
+    function updateModalTotals() {
+        refs.qtyValue.textContent = String(modalQty);
+        refs.total.textContent = formatPrice((modalProduct?.price || 0) * modalQty);
+    }
+    function openCartModal(product) {
+        modalProduct = product;
+        modalQty = 1;
+        refs.img.src = product.image;
+        refs.name.textContent = product.name;
+        refs.desc.textContent = product.description || '';
+        updateModalTotals();
+        modal.classList.remove('hidden');
+    }
+    function closeCartModal() {
+        modal.classList.add('hidden');
+    }
+    refs.close.addEventListener('click', closeCartModal);
+    refs.cancel.addEventListener('click', closeCartModal);
+    refs.qtyMinus.addEventListener('click', () => {
+        modalQty = Math.max(1, modalQty - 1);
+        updateModalTotals();
+    });
+    refs.qtyPlus.addEventListener('click', () => {
+        modalQty += 1;
+        updateModalTotals();
+    });
+    refs.confirm.addEventListener('click', () => {
+        if (modalProduct) {
+            upsertCart(modalProduct, modalQty);
+        }
+        closeCartModal();
+    });
+
+    updateBadges();
+    loadProducts();
+
+    const searchForm = document.getElementById('searchForm');
+    if (searchForm) {
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const value = (document.getElementById('searchInput')?.value || '').trim();
+            const url = new URL(location.href);
+            if (value) url.searchParams.set('q', value); else url.searchParams.delete('q');
+            location.href = url.toString();
+        });
+    }
+    </script>
 </body>
+
 </html>
